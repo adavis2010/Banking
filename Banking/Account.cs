@@ -28,10 +28,10 @@ namespace Banking {
 
 
         }
-
+        //default constructor
         public Account(): this("DefAcct0", "Default Account Description") { }
 
-
+        // constructor with two parameters
         public Account(string acctNbr, string desc = "New Account") {
             AccountNumber = acctNbr;
             Description = desc;
