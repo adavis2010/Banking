@@ -4,7 +4,10 @@ namespace Banking {
     class Program {
         static void Main(string[] args) {
 
-            var sav1 = new SavingsComposition();
+            //var sav1 = new SavingsComposition(); Used to print Savings Composition
+
+            //Turn Savings into Inhertance using Account and Print on first line below
+            var sav1 = new SavingsInheritance();
             sav1.Deposit(50);
             sav1.Withdrawal(30);
             sav1.Withdrawal(50);
@@ -12,11 +15,10 @@ namespace Banking {
             sav1.Deposit(100);
             sav1.Withdrawal(20);
 
-
             Console.WriteLine($"Savings balance is {sav1.Balance}");
             //Paying Interest 
             sav1.PayInterest(3);
-            Console.WriteLine($"Savings balance is {sav1.Balance}");
+           Console.WriteLine($"Savings balance is {sav1.Balance}");
 
             // calculation of interest
             //var interest = sav1.Interest(3);

@@ -22,7 +22,7 @@ namespace Banking {
         //displaying property (Balance) from account. 
         
         public decimal Balance {
-            get { return account.Balance;}
+            get {return account.Balance;}
         }
 
         public void Deposit(decimal amount) {
