@@ -11,16 +11,20 @@ namespace Banking {
             var sav1 = new SavingsInheritance();
             sav1.Deposit(50);
             sav1.Withdrawal(30);
-            //doing exception using try and catch lines 14 - 21
+            //doing exception using try and catch(how you handle/deal with exception) lines 14 - 21
             try {
-                sav1.Withdrawal(50);
+                //sav1.Withdrawal(50);
+                sav1.Withdrawal(-10);
+                sav1.Withdrawal(-10);
+            } catch (AmountMustBePositiveException ambpex) {
+                Console.WriteLine(ambpex.Message);
+            
             } catch (InsufficientFundsException ifex) {
                 Console.WriteLine(ifex.Message);
                 return;
             }
             //will end our program at the end of return at line 18
 
-            sav1.Withdrawal(-20);
             sav1.Deposit(100);
             sav1.Withdrawal(20);
 

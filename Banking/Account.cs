@@ -11,13 +11,16 @@ namespace Banking {
         public decimal Balance { get; private set; } = 0;
 
         public void Deposit(decimal amount) {
-            if (amount >= 0) {
-                Balance += amount;
+            if (amount<= 0){
+                throw new AmountMustBePositiveException();
+                
             }
+            Balance += amount;
         }
         public void Withdrawal(decimal amount) {
-            if (amount < 0) {
-                return;
+            if (amount <= 0) {
+                throw new AmountMustBePositiveException();
+               
             }
             if (Balance >= amount) {
                 Balance -= amount;
