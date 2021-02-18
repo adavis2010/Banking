@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Banking.Exceptions;
+    //will cause exceptions to go to Exceptions folder
 
 namespace Banking {
     class Account {
@@ -21,11 +23,12 @@ namespace Banking {
                 Balance -= amount;
 
             } else {
-                Console.WriteLine($"Insufficient Funds!");
+                //passing in new values two parameter constructor
+                throw new InsufficientFundsException(Balance,amount);
+                //causing an exception to occur with throw 
+                //Console.WriteLine($"Insufficient Funds!");
 
             }
-
-
 
         }
         //default constructor

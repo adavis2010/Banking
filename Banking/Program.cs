@@ -1,4 +1,5 @@
 ﻿using System;
+using Banking.Exceptions;
 
 namespace Banking {
     class Program {
@@ -10,7 +11,15 @@ namespace Banking {
             var sav1 = new SavingsInheritance();
             sav1.Deposit(50);
             sav1.Withdrawal(30);
-            sav1.Withdrawal(50);
+            //doing exception using try and catch lines 14 - 21
+            try {
+                sav1.Withdrawal(50);
+            } catch (InsufficientFundsException ifex) {
+                Console.WriteLine(ifex.Message);
+                return;
+            }
+            //will end our program at the end of return at line 18
+
             sav1.Withdrawal(-20);
             sav1.Deposit(100);
             sav1.Withdrawal(20);
